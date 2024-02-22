@@ -16,13 +16,13 @@ public class Repartition {
                 .master("local[*]")
                 .getOrCreate();
         JavaSparkContext sparkContext = new JavaSparkContext(sparkSession.sparkContext());
-        System.out.println("Default Minimum Partitions= "+sparkContext.defaultMinPartitions());
-        ArrayList<Integer>data=new ArrayList<>();
-        data.addAll(List.of(1,2,3,4,5,6,7));
+        System.out.println("Default Minimum Partitions= " + sparkContext.defaultMinPartitions());
+        ArrayList<Integer> data = new ArrayList<>(List.of(1, 2, 3, 4, 5, 6, 7));
         JavaRDD<Integer> myRdd = sparkContext.parallelize(data);
-        System.out.println("Initial Partitions= "+myRdd.getNumPartitions());
+        System.out.println("Initial Partitions= " + myRdd.getNumPartitions());
         JavaRDD<Integer> repartition = myRdd.repartition(2);
-        System.out.println("After Repartition Number of Partitions= "+repartition.getNumPartitions());
+        System.out.println("After Repartition Number of Partitions= " + repartition.getNumPartitions());
+        sparkSession.stop();
 
 
 
