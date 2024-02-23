@@ -37,6 +37,12 @@
             <artifactId>spark-sql_2.12</artifactId>
             <version>3.5.0</version> <!-- Replace with the version you are using -->
         </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-mllib_2.12</artifactId>
+            <version>3.2.0</version>
+        </dependency>
+
         <!--    For Logging-->
         <!--    <dependency>-->
         <!--      <groupId>org.slf4j</groupId>-->
